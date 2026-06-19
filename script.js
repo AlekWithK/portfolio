@@ -1,10 +1,3 @@
-// ============================================
-// Contour-line canvas background (signature element)
-// Generates flowing topographic-style contour lines
-// using layered sine/cosine noise — a nod to the
-// elevation/raster data this portfolio's subject works with.
-// ============================================
-
 (function () {
   const canvas = document.getElementById('contour-canvas');
   if (!canvas) return;
@@ -26,7 +19,6 @@
   }
 
   // Simple pseudo-noise field built from layered sine waves.
-  // Cheap, deterministic, no external libs needed.
   function fieldValue(x, y, t) {
     const s1 = Math.sin(x * 0.0028 + t * 0.00012) * Math.cos(y * 0.0032 - t * 0.00009);
     const s2 = Math.sin((x + y) * 0.0016 - t * 0.00015) * 0.6;
